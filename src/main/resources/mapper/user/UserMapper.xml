@@ -4,6 +4,7 @@
 <mapper namespace="com.steven.game.dao.UserDao">
 	<!-- 人员信息resultMap -->
 	<resultMap type="com.steven.game.vo.UserVo" id="userIds">
+		<id property="id" column="id" />
 		<id property="openid" column="openid" />
 		<id property="nickname" column="nickname" />
 		<id property="sex" column="sex" />
@@ -12,6 +13,7 @@
 		<id property="province" column="province" />
 		<id property="language" column="language" />
 		<id property="invitationCode" column="invitation_code" />
+		<id property="pInvitationCode" column="p_invitation_code" />
 		<id property="createTime" column="create_time" />
 		<id property="lastUpdateTime" column="last_update_time" />
 	</resultMap>
@@ -27,12 +29,14 @@
 		language,
 		headimgurl,
 		invitation_code,
+		p_invitation_code,
 		create_time,
 		last_update_time
 	</sql>
 	
 	<!-- 人员查询字段 -->
 	<sql id="userSelectId">
+		u.id,
 		u.openid,
 		u.nickname,
 		u.sex,
@@ -42,6 +46,7 @@
 		u.language,
 		u.headimgurl,
 		u.invitation_code,
+		u.p_invitation_code,
 		u.create_time,
 		u.last_update_time
 	</sql>
@@ -57,7 +62,7 @@
     </select>
     
     <!-- 创建人员信息 -->
-    <insert id="buildUserInfo" parameterType="com.steven.game.vo.UserVo">
+    <insert id="buildUserInfo" parameterType="com.steven.game.vo.UserVo"  useGeneratedKeys="true" keyProperty="id">
     	INSERT INTO
 			`mg_user`(
 		<include refid="userInsertId" />
@@ -73,6 +78,7 @@
 			#{language},
 			#{headimgurl},
 			#{invitationCode},
+			NULL,
 			now(),
 			now()
 		)

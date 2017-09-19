@@ -58,7 +58,7 @@ public class WxController {
 				UserVo userVo = gson.fromJson(result, UserVo.class);
 				int userNum = userService.findOpenIdIsExist(userVo.getOpenid());
 				if (0 == userNum) {
-					String str = userVo.getOpenid() + RandomStr.randomStr(18);
+					String str = userVo.getOpenid() + RandomStr.randomStr(6);
 					userVo.setInvitationCode(str);
 					userService.buildUserInfo(userVo);
 					session.setAttribute("userVo", userVo);

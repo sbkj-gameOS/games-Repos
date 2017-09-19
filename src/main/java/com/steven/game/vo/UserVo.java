@@ -9,6 +9,10 @@ package com.steven.game.vo;
 public class UserVo {
 
 	/**
+	 * 项目用户id
+	 */
+	private long id;
+	/**
 	 * 用户id
 	 */
 	private String openid;
@@ -41,9 +45,13 @@ public class UserVo {
 	 */
 	private String headimgurl;
 	/**
-	 * 邀请码
+	 * 个人邀请码
 	 */
 	private String invitationCode;
+	/**
+	 * 他人邀请码
+	 */
+	private String pInvitationCode;
 	/**
 	 * 创建时间
 	 */
@@ -139,6 +147,22 @@ public class UserVo {
 
 	public void setLastUpdateTime(String lastUpdateTime) {
 		this.lastUpdateTime = lastUpdateTime;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getpInvitationCode() {
+		return pInvitationCode;
+	}
+
+	public void setpInvitationCode(String pInvitationCode) {
+		this.pInvitationCode = pInvitationCode;
 	}
 
 }

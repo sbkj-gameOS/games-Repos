@@ -29,9 +29,9 @@ public interface UserDao {
 	/**
 	 * @Title: buildUserInfo
 	 * @Description: TODO(创建人员信息)
-	 * @param userVo 设定文件 void 返回类型
+	 * @param userVo 设定文件 Integer 返回类型
 	 */
-	public void buildUserInfo(UserVo userVo);
+	public Integer buildUserInfo(UserVo userVo);
 
 	/**
 	 * @Title: findUserInfo
