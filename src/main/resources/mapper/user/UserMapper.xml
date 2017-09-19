@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.steven.game.dao.UserDao">
+	<!-- 人员信息resultMap -->
+	<resultMap type="com.steven.game.vo.UserVo" id="userIds">
+		<id property="openid" column="openid" />
+		<id property="nickname" column="nickname" />
+		<id property="sex" column="sex" />
+		<id property="city" column="city" />
+		<id property="country" column="country" />
+		<id property="province" column="province" />
+		<id property="language" column="language" />
+		<id property="invitationCode" column="invitation_code" />
+		<id property="createTime" column="create_time" />
+		<id property="lastUpdateTime" column="last_update_time" />
+	</resultMap>
+	
+	<!-- 人员插入字段 -->
+	<sql id="userInsertId">
+		openid,
+		nickname,
+		sex,
+		city,
+		country,
+		province,
+		language,
+		headimgurl,
+		invitation_code,
+		create_time,
+		last_update_time
+	</sql>
+	
+	<!-- 人员查询字段 -->
+	<sql id="userSelectId">
+		u.openid,
+		u.nickname,
+		u.sex,
+		u.city,
+		u.country,
+		u.province,
+		u.language,
+		u.headimgurl,
+		u.invitation_code,
+		u.create_time,
+		u.last_update_time
+	</sql>
+
+	<!-- 查询人员是否已存在 -->
+	<select id="findOpenIdIsExist" parameterType="java.lang.String" resultType="java.lang.Integer">
+		SELECT COUNT(1) FROM `mg_user` u WHERE u.`openid` = #{openid}
+	</select>
+
+	<!-- 查询授权码是否已存在 -->
+    <select id="findInvitationCodeIsExist" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM `mg_user` u WHERE u.`invitation_code` = #{invitationCode}
+    </select>
+    
+    <!-- 创建人员信息 -->
+    <insert id="buildUserInfo" parameterType="com.steven.game.vo.UserVo">
+    	INSERT INTO
+			`mg_user`(
+		<include refid="userInsertId" />
+		)
+		VALUES
+		(
+			#{openid},
+			#{nickname},
+			#{sex},
+			#{city},
+			#{country},
+			#{province},
+			#{language},
+			#{headimgurl},
+			#{invitationCode},
+			now(),
+			now()
+		)
+    </insert>
+    
+    <!-- 查询人员信息 -->
+    <select id="findUserInfo" parameterType="java.lang.String" resultMap="userIds">
+    	SELECT 
+    		<include refid="userSelectId"/> 
+    	FROM 
+    		`mg_user` u 
+    	WHERE 
+    		u.`is_del` = 0 
+    	AND
+    		u.`openid` = #{openid}
+    </select>
+</mapper>
