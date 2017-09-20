@@ -6,25 +6,26 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MgRoomCordUsehistoryMapper {
-    int countByExample(MgRoomCordUsehistoryExample example);
 
-    int deleteByExample(MgRoomCordUsehistoryExample example);
+	public int countByExample(MgRoomCordUsehistoryExample example);
 
-    int deleteByPrimaryKey(Long id);
+	public int deleteByExample(MgRoomCordUsehistoryExample example);
 
-    int insert(MgRoomCordUsehistory record);
+	public int deleteByPrimaryKey(Long id);
 
-    int insertSelective(MgRoomCordUsehistory record);
+	public int insert(MgRoomCordUsehistory record);
 
-    List<MgRoomCordUsehistory> selectByExample(MgRoomCordUsehistoryExample example);
+	public int insertSelective(MgRoomCordUsehistory record);
 
-    MgRoomCordUsehistory selectByPrimaryKey(Long id);
+	public List<MgRoomCordUsehistory> selectByExample(MgRoomCordUsehistoryExample example);
 
-    int updateByExampleSelective(@Param("record") MgRoomCordUsehistory record, @Param("example") MgRoomCordUsehistoryExample example);
+	public MgRoomCordUsehistory selectByPrimaryKey(Long id);
 
-    int updateByExample(@Param("record") MgRoomCordUsehistory record, @Param("example") MgRoomCordUsehistoryExample example);
+	public int updateByExampleSelective(@Param("record") MgRoomCordUsehistory record, @Param("example") MgRoomCordUsehistoryExample example);
 
-    int updateByPrimaryKeySelective(MgRoomCordUsehistory record);
+	public int updateByExample(@Param("record") MgRoomCordUsehistory record, @Param("example") MgRoomCordUsehistoryExample example);
 
-    int updateByPrimaryKey(MgRoomCordUsehistory record);
+	public int updateByPrimaryKeySelective(MgRoomCordUsehistory record);
+
+	public int updateByPrimaryKey(MgRoomCordUsehistory record);
 }

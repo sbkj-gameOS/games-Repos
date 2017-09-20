@@ -6,25 +6,26 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MgCashApprovalMapper {
-    int countByExample(MgCashApprovalExample example);
 
-    int deleteByExample(MgCashApprovalExample example);
+	public int countByExample(MgCashApprovalExample example);
 
-    int deleteByPrimaryKey(Long id);
+	public int deleteByExample(MgCashApprovalExample example);
 
-    int insert(MgCashApproval record);
+	public int deleteByPrimaryKey(Long id);
 
-    int insertSelective(MgCashApproval record);
+	public int insert(MgCashApproval record);
 
-    List<MgCashApproval> selectByExample(MgCashApprovalExample example);
+	public int insertSelective(MgCashApproval record);
 
-    MgCashApproval selectByPrimaryKey(Long id);
+	public List<MgCashApproval> selectByExample(MgCashApprovalExample example);
 
-    int updateByExampleSelective(@Param("record") MgCashApproval record, @Param("example") MgCashApprovalExample example);
+	public MgCashApproval selectByPrimaryKey(Long id);
 
-    int updateByExample(@Param("record") MgCashApproval record, @Param("example") MgCashApprovalExample example);
+	public int updateByExampleSelective(@Param("record") MgCashApproval record, @Param("example") MgCashApprovalExample example);
 
-    int updateByPrimaryKeySelective(MgCashApproval record);
+	public int updateByExample(@Param("record") MgCashApproval record, @Param("example") MgCashApprovalExample example);
 
-    int updateByPrimaryKey(MgCashApproval record);
+	public int updateByPrimaryKeySelective(MgCashApproval record);
+
+	public int updateByPrimaryKey(MgCashApproval record);
 }

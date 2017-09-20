@@ -6,25 +6,26 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MgUserRechargeMapper {
-    int countByExample(MgUserRechargeExample example);
 
-    int deleteByExample(MgUserRechargeExample example);
+	public int countByExample(MgUserRechargeExample example);
 
-    int deleteByPrimaryKey(Long id);
+	public int deleteByExample(MgUserRechargeExample example);
 
-    int insert(MgUserRecharge record);
+	public int deleteByPrimaryKey(Long id);
 
-    int insertSelective(MgUserRecharge record);
+	public int insert(MgUserRecharge record);
 
-    List<MgUserRecharge> selectByExample(MgUserRechargeExample example);
+	public int insertSelective(MgUserRecharge record);
 
-    MgUserRecharge selectByPrimaryKey(Long id);
+	public List<MgUserRecharge> selectByExample(MgUserRechargeExample example);
 
-    int updateByExampleSelective(@Param("record") MgUserRecharge record, @Param("example") MgUserRechargeExample example);
+	public MgUserRecharge selectByPrimaryKey(Long id);
 
-    int updateByExample(@Param("record") MgUserRecharge record, @Param("example") MgUserRechargeExample example);
+	public int updateByExampleSelective(@Param("record") MgUserRecharge record, @Param("example") MgUserRechargeExample example);
 
-    int updateByPrimaryKeySelective(MgUserRecharge record);
+	public int updateByExample(@Param("record") MgUserRecharge record, @Param("example") MgUserRechargeExample example);
 
-    int updateByPrimaryKey(MgUserRecharge record);
+	public int updateByPrimaryKeySelective(MgUserRecharge record);
+
+	public int updateByPrimaryKey(MgUserRecharge record);
 }

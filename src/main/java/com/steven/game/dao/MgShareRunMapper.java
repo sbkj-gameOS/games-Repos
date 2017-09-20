@@ -6,25 +6,26 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MgShareRunMapper {
-    int countByExample(MgShareRunExample example);
 
-    int deleteByExample(MgShareRunExample example);
+	public int countByExample(MgShareRunExample example);
 
-    int deleteByPrimaryKey(Long id);
+	public int deleteByExample(MgShareRunExample example);
 
-    int insert(MgShareRun record);
+	public int deleteByPrimaryKey(Long id);
 
-    int insertSelective(MgShareRun record);
+	public int insert(MgShareRun record);
 
-    List<MgShareRun> selectByExample(MgShareRunExample example);
+	public int insertSelective(MgShareRun record);
 
-    MgShareRun selectByPrimaryKey(Long id);
+	public List<MgShareRun> selectByExample(MgShareRunExample example);
 
-    int updateByExampleSelective(@Param("record") MgShareRun record, @Param("example") MgShareRunExample example);
+	public MgShareRun selectByPrimaryKey(Long id);
 
-    int updateByExample(@Param("record") MgShareRun record, @Param("example") MgShareRunExample example);
+	public int updateByExampleSelective(@Param("record") MgShareRun record, @Param("example") MgShareRunExample example);
 
-    int updateByPrimaryKeySelective(MgShareRun record);
+	public int updateByExample(@Param("record") MgShareRun record, @Param("example") MgShareRunExample example);
 
-    int updateByPrimaryKey(MgShareRun record);
+	public int updateByPrimaryKeySelective(MgShareRun record);
+
+	public int updateByPrimaryKey(MgShareRun record);
 }

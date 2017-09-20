@@ -6,25 +6,26 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MgUserMapper {
-    int countByExample(MgUserExample example);
 
-    int deleteByExample(MgUserExample example);
+	public int countByExample(MgUserExample example);
 
-    int deleteByPrimaryKey(Long id);
+	public int deleteByExample(MgUserExample example);
 
-    int insert(MgUser record);
+	public int deleteByPrimaryKey(Long id);
 
-    int insertSelective(MgUser record);
+	public int insert(MgUser record);
 
-    List<MgUser> selectByExample(MgUserExample example);
+	public int insertSelective(MgUser record);
 
-    MgUser selectByPrimaryKey(Long id);
+	public List<MgUser> selectByExample(MgUserExample example);
 
-    int updateByExampleSelective(@Param("record") MgUser record, @Param("example") MgUserExample example);
+	public MgUser selectByPrimaryKey(Long id);
 
-    int updateByExample(@Param("record") MgUser record, @Param("example") MgUserExample example);
+	public int updateByExampleSelective(@Param("record") MgUser record, @Param("example") MgUserExample example);
 
-    int updateByPrimaryKeySelective(MgUser record);
+	public int updateByExample(@Param("record") MgUser record, @Param("example") MgUserExample example);
 
-    int updateByPrimaryKey(MgUser record);
+	public int updateByPrimaryKeySelective(MgUser record);
+
+	public int updateByPrimaryKey(MgUser record);
 }
