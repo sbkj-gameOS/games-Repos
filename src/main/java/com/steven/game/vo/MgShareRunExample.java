@@ -575,52 +575,62 @@ public class MgShareRunExample {
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeEqualTo(BigDecimal value) {
+        public Criteria andCashTimeEqualTo(String value) {
             addCriterion("cash_time =", value, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeNotEqualTo(BigDecimal value) {
+        public Criteria andCashTimeNotEqualTo(String value) {
             addCriterion("cash_time <>", value, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeGreaterThan(BigDecimal value) {
+        public Criteria andCashTimeGreaterThan(String value) {
             addCriterion("cash_time >", value, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeGreaterThanOrEqualTo(BigDecimal value) {
+        public Criteria andCashTimeGreaterThanOrEqualTo(String value) {
             addCriterion("cash_time >=", value, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeLessThan(BigDecimal value) {
+        public Criteria andCashTimeLessThan(String value) {
             addCriterion("cash_time <", value, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeLessThanOrEqualTo(BigDecimal value) {
+        public Criteria andCashTimeLessThanOrEqualTo(String value) {
             addCriterion("cash_time <=", value, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeIn(List<BigDecimal> values) {
+        public Criteria andCashTimeLike(String value) {
+            addCriterion("cash_time like", value, "cashTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCashTimeNotLike(String value) {
+            addCriterion("cash_time not like", value, "cashTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCashTimeIn(List<String> values) {
             addCriterion("cash_time in", values, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeNotIn(List<BigDecimal> values) {
+        public Criteria andCashTimeNotIn(List<String> values) {
             addCriterion("cash_time not in", values, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andCashTimeBetween(String value1, String value2) {
             addCriterion("cash_time between", value1, value2, "cashTime");
             return (Criteria) this;
         }
 
-        public Criteria andCashTimeNotBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andCashTimeNotBetween(String value1, String value2) {
             addCriterion("cash_time not between", value1, value2, "cashTime");
             return (Criteria) this;
         }

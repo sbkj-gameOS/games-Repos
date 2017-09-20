@@ -9,7 +9,7 @@
     <result column="source_accounts" property="sourceAccounts" jdbcType="VARCHAR" />
     <result column="gain_time" property="gainTime" jdbcType="VARCHAR" />
     <result column="cash_amount" property="cashAmount" jdbcType="DECIMAL" />
-    <result column="cash_time" property="cashTime" jdbcType="DECIMAL" />
+    <result column="cash_time" property="cashTime" jdbcType="VARCHAR" />
     <result column="share_run_surplus" property="shareRunSurplus" jdbcType="DECIMAL" />
     <result column="create_time" property="createTime" jdbcType="VARCHAR" />
     <result column="last_update_time" property="lastUpdateTime" jdbcType="VARCHAR" />
@@ -115,7 +115,7 @@
       )
     values (#{id,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{userOpenid,jdbcType=VARCHAR}, 
       #{shareRunAmount,jdbcType=DECIMAL}, #{sourceAccounts,jdbcType=VARCHAR}, #{gainTime,jdbcType=VARCHAR}, 
-      #{cashAmount,jdbcType=DECIMAL}, #{cashTime,jdbcType=DECIMAL}, #{shareRunSurplus,jdbcType=DECIMAL}, 
+      #{cashAmount,jdbcType=DECIMAL}, #{cashTime,jdbcType=VARCHAR}, #{shareRunSurplus,jdbcType=DECIMAL}, 
       #{createTime,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=VARCHAR}, #{isDel,jdbcType=TINYINT}
       )
   </insert>
@@ -182,7 +182,7 @@
         #{cashAmount,jdbcType=DECIMAL},
       </if>
       <if test="cashTime != null" >
-        #{cashTime,jdbcType=DECIMAL},
+        #{cashTime,jdbcType=VARCHAR},
       </if>
       <if test="shareRunSurplus != null" >
         #{shareRunSurplus,jdbcType=DECIMAL},
@@ -229,7 +229,7 @@
         cash_amount = #{record.cashAmount,jdbcType=DECIMAL},
       </if>
       <if test="record.cashTime != null" >
-        cash_time = #{record.cashTime,jdbcType=DECIMAL},
+        cash_time = #{record.cashTime,jdbcType=VARCHAR},
       </if>
       <if test="record.shareRunSurplus != null" >
         share_run_surplus = #{record.shareRunSurplus,jdbcType=DECIMAL},
@@ -257,7 +257,7 @@
       source_accounts = #{record.sourceAccounts,jdbcType=VARCHAR},
       gain_time = #{record.gainTime,jdbcType=VARCHAR},
       cash_amount = #{record.cashAmount,jdbcType=DECIMAL},
-      cash_time = #{record.cashTime,jdbcType=DECIMAL},
+      cash_time = #{record.cashTime,jdbcType=VARCHAR},
       share_run_surplus = #{record.shareRunSurplus,jdbcType=DECIMAL},
       create_time = #{record.createTime,jdbcType=VARCHAR},
       last_update_time = #{record.lastUpdateTime,jdbcType=VARCHAR},
@@ -288,7 +288,7 @@
         cash_amount = #{cashAmount,jdbcType=DECIMAL},
       </if>
       <if test="cashTime != null" >
-        cash_time = #{cashTime,jdbcType=DECIMAL},
+        cash_time = #{cashTime,jdbcType=VARCHAR},
       </if>
       <if test="shareRunSurplus != null" >
         share_run_surplus = #{shareRunSurplus,jdbcType=DECIMAL},
@@ -313,7 +313,7 @@
       source_accounts = #{sourceAccounts,jdbcType=VARCHAR},
       gain_time = #{gainTime,jdbcType=VARCHAR},
       cash_amount = #{cashAmount,jdbcType=DECIMAL},
-      cash_time = #{cashTime,jdbcType=DECIMAL},
+      cash_time = #{cashTime,jdbcType=VARCHAR},
       share_run_surplus = #{shareRunSurplus,jdbcType=DECIMAL},
       create_time = #{createTime,jdbcType=VARCHAR},
       last_update_time = #{lastUpdateTime,jdbcType=VARCHAR},

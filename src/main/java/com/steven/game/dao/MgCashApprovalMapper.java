@@ -2,9 +2,8 @@ package com.steven.game.dao;
 
 import com.steven.game.vo.MgCashApproval;
 import com.steven.game.vo.MgCashApprovalExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface MgCashApprovalMapper {
     int countByExample(MgCashApprovalExample example);

@@ -1,9 +1,8 @@
 package com.steven.game.dao;
 
-import java.util.List;
-
 import com.steven.game.vo.MgUser;
 import com.steven.game.vo.MgUserExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MgUserMapper {

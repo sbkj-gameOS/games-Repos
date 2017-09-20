@@ -2,9 +2,8 @@ package com.steven.game.dao;
 
 import com.steven.game.vo.MgUserRecharge;
 import com.steven.game.vo.MgUserRechargeExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface MgUserRechargeMapper {
     int countByExample(MgUserRechargeExample example);

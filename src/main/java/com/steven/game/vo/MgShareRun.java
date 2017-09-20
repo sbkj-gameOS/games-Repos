@@ -17,7 +17,7 @@ public class MgShareRun {
 
     private BigDecimal cashAmount;
 
-    private BigDecimal cashTime;
+    private String cashTime;
 
     private BigDecimal shareRunSurplus;
 
@@ -83,12 +83,12 @@ public class MgShareRun {
         this.cashAmount = cashAmount;
     }
 
-    public BigDecimal getCashTime() {
+    public String getCashTime() {
         return cashTime;
     }
 
-    public void setCashTime(BigDecimal cashTime) {
-        this.cashTime = cashTime;
+    public void setCashTime(String cashTime) {
+        this.cashTime = cashTime == null ? null : cashTime.trim();
     }
 
     public BigDecimal getShareRunSurplus() {
