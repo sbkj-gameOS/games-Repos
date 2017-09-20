@@ -38,8 +38,7 @@ public class WxUserInfo {
 				accessToken = jsonTexts.get("access_token").toString();
 			}
 			url = "https://api.weixin.qq.com/sns/userinfo?access_token=AccessToken&openid=Openid&lang=zh_CN";
-			url = url.replace("AccessToken", accessToken).replace("Openid",
-					openid);
+			url = url.replace("AccessToken", accessToken).replace("Openid",openid);
 			result = HttpKit.get(url);
 			logger.info("result=" + result);
 		} catch (Exception e) {
