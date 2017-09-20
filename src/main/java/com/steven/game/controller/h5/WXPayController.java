@@ -1,4 +1,4 @@
-package com.steven.game.controller;
+package com.steven.game.controller.h5;
 
 import java.math.BigDecimal;
 import java.net.URLEncoder;
