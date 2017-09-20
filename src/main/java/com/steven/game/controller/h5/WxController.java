@@ -55,12 +55,13 @@ public class WxController {
 					userVo.setInvitationCode(str);
 					userService.buildUserInfo(userVo);
 					session.setAttribute("userVo", userVo);
+					dataMap.put("userVo", userVo);
 				} else {
 					UserVo newUserVo = new UserVo();
 					newUserVo = userService.findUserInfo(userVo.getOpenid());
 					session.setAttribute("userVo", newUserVo);
+					dataMap.put("userVo", newUserVo);
 				}
-				dataMap.put("userVo", userVo);
 				dataMap.put("success", true);
 			} else {
 				dataMap.put("success", false);
