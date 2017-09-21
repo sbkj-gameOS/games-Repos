@@ -51,10 +51,9 @@ public class WxController {
 				UserVo userVo = gson.fromJson(result, UserVo.class);
 				int userNum = userService.findOpenIdIsExist(userVo.getOpenid());
 				if (0 == userNum) {
-					SimpleDateFormat formatter = new SimpleDateFormat("ddMMMyyyyHHmmssSSS");
+					SimpleDateFormat formatter = new SimpleDateFormat("yyyyHHmmssSSS");
 					String time =formatter.format(new Date());
-					String str = "YX"+time.substring(time.length()-4,time.length());
-					userVo.setInvitationCode(str);
+					userVo.setInvitationCode(time);
 					userService.buildUserInfo(userVo);
 					session.setAttribute("userVo", userVo);
 					dataMap.put("userVo", userVo);
