@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.steven.game.service.UserService;
 import com.steven.game.vo.UserVo;
+import com.steven.util.wx.WxUserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +42,8 @@ public class WxController {
 	public String wxLogin(String code, HttpSession session) {
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		/** 请求结果 */
-		String result = "{\"subscribe\": 1,\"openid\":\"o6_bmjrPTlm6_2sgVt7hMZOPfL2M\",\"nickname\": \"Band\",\"sex\": 1,\"language\": \"zh_CN\",\"city\":\"广州\",\"province\": \"广东\",\"country\":\"中国\",\"headimgurl\":\"\",\"subscribe_time\": 1382694957,\"unionid\": \"o6_bmasdasdsad6_2sgVt7hMZOPfL\",\"remark\": \"\",\"groupid\":0,  \"tagid_list\":[128,2]}";//WxUserInfo.getWxUserInfo(code);
+		String result = "{\"subscribe\": 1,\"openid\":\"o6_bmjrPTlm6_2sgVt7hMZOPfL2M\",\"nickname\": \"Band\",\"sex\": 1,\"language\": \"zh_CN\",\"city\":\"广州\",\"province\": \"广东\",\"country\":\"中国\",\"headimgurl\":\"\",\"subscribe_time\": 1382694957,\"unionid\": \"o6_bmasdasdsad6_2sgVt7hMZOPfL\",\"remark\": \"\",\"groupid\":0,  \"tagid_list\":[128,2]}";
+//		String result = WxUserInfo.getWxUserInfo(code);//根据code获取微信用户信息
 		JSONObject jsonObject = (JSONObject) JSON.parse(result);
 		Gson gson = new Gson();
 		try {
