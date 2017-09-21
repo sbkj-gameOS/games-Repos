@@ -95,4 +95,8 @@
     	AND
     		u.`openid` = #{openid}
     </select>
+
+	<update id="updagteWxToken" parameterType="com.steven.game.vo.WxToken">
+
+	</update>
 </mapper>

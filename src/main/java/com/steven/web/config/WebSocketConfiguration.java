@@ -1,5 +1,6 @@
 package com.steven.web.config;
 
+import com.steven.util.timer.MyTimerTaskListener;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -52,6 +53,11 @@ public class WebSocketConfiguration  extends WebMvcConfigurerAdapter implements 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //registry.addInterceptor(loginInterceptor()) ;
+    }
+
+    @Bean(initMethod = "contextInitialized")
+    public MyTimerTaskListener myTimer() {
+        return new MyTimerTaskListener() ;
     }
     /**
      * 闈欐�佽祫婧愯闂櫒
