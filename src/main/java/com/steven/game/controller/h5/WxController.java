@@ -43,15 +43,16 @@ public class WxController {
 	public String wxLogin(String code, HttpSession session) {
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		/** 请求结果 */
-		String result = WxUserInfo.getWxUserInfo(code);
+		String result = "{\"subscribe\": 1,\"openid\":\"o6_bmjrPTlm6_2sgVt7hMZOPfL2M\",\"nickname\": \"Band\",\"sex\": 1,\"language\": \"zh_CN\",\"city\":\"广州\",\"province\": \"广东\",\"country\":\"中国\",\"headimgurl\":\"\",\"subscribe_time\": 1382694957,\"unionid\": \"o6_bmasdasdsad6_2sgVt7hMZOPfL\",\"remark\": \"\",\"groupid\":0,  \"tagid_list\":[128,2]}";//WxUserInfo.getWxUserInfo(code);
 		JSONObject jsonObject = (JSONObject) JSON.parse(result);
 		Gson gson = new Gson();
 		try {
-			if ("40013" != jsonObject.get("errcode")) {
+			if (jsonObject.get("openid") != null) {
 				UserVo userVo = gson.fromJson(result, UserVo.class);
 				int userNum = userService.findOpenIdIsExist(userVo.getOpenid());
 				if (0 == userNum) {
-					String str = userVo.getOpenid() + RandomStr.randomStr(6);
+					String time = String.valueOf(System.currentTimeMillis());
+					String str = "YX"+time.substring(time.length()-4,time.length());
 					userVo.setInvitationCode(str);
 					userService.buildUserInfo(userVo);
 					session.setAttribute("userVo", userVo);
