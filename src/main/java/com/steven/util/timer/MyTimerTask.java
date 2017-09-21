@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.steven.game.dao.WxTokenMapper;
 import com.steven.game.vo.WxToken;
+import com.steven.util.wx.ConfigUtil;
 import com.steven.util.wx.HttpKit;
 
 import java.util.Date;
@@ -28,7 +29,7 @@ public class MyTimerTask extends TimerTask{
         try {
             /** 请求结果 */
             String result = null;
-            String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx97f93285af090c3e&secret=1f9470d9289615b41e0a6b487bbe5b85";
+            String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+ ConfigUtil.APPID+"&secret="+ConfigUtil.APP_SECRECT;
             result = HttpKit.get(url);
             JSONObject jsonTexts = (JSONObject) JSON.parse(result);
             WxToken token = new WxToken();
