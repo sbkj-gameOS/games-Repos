@@ -4,7 +4,9 @@ import java.util.Date;
 
 public class WxToken {
     private Integer id;
-
+    /**
+     * token值
+     */
     private String accessToken;
 
     private Date time;
