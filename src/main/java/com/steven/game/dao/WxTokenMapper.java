@@ -1,8 +1,9 @@
 package com.steven.game.dao;
 
+import java.util.List;
+
 import com.steven.game.vo.WxToken;
 import com.steven.game.vo.WxTokenExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface WxTokenMapper {
