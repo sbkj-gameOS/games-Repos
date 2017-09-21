@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * token扩展类
+ */
 public class WxTokenExample {
     protected String orderByClause;
 

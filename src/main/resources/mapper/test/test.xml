@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.bizpartner.egding.dao.test.TestDao">
+<mapper namespace="com.steven.game.dao.TestDao">
 
-    <select id="test" resultType="java.lang.Integer">
-        select count(0) from d_user
-    </select>
-
+	<insert id="insertTest">
+		INSERT INTO
+			`wx_token`(
+			id,
+			access_token,
+			time
+			)
+		VALUES(
+			1,
+			2,
+			NOW()
+		)		
+	</insert>
+	
+	<update id="updateTest">
+		UPDATE
+			`wx_token`
+		SET
+			access_token = 4654654646546546465456
+		WHERE
+			id = 0
+	</update>
 </mapper>
